@@ -1,0 +1,341 @@
+/* 
+FONTS:
+Crimson Pro 200
+Montserrat 400, 500, 700
+Lora 500, 700 
+*/
+
+/* GENERAL */
+body {
+  background-color: #181719;
+  color: white;
+  max-width: 1200px;
+  margin: 42px auto 24px auto;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.header a {
+  color: white;
+}
+
+.logo {
+  font-family: "Crimson Pro";
+  font-size: 0.875em;
+  text-transform: uppercase;
+  border: 1px solid white;
+  padding: 8px;
+}
+
+.nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  position: relative;
+}
+
+.nav ul a {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 1.125em;
+  padding: 10px 0;
+  position: relative;
+}
+
+.nav ul a:hover {
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.nav ul a:hover::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  display: block;
+  position: absolute;
+}
+
+.nav ul li:nth-child(odd)::before {
+  content: "";
+  display: block;
+  width: 57px;
+  height: 3px;
+  background-color: white;
+  position: absolute;
+  bottom: -8px;
+  visibility: hidden;
+}
+
+.nav ul li:nth-child(2)::before {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 3px;
+  background-color: white;
+  position: absolute;
+  bottom: -8px;
+  right: 250px;
+  visibility: hidden;
+}
+
+.nav ul li:nth-child(4)::before {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  background-color: white;
+  position: absolute;
+  bottom: -8px;
+  right: 0px;
+  visibility: hidden;
+}
+
+/* NAV MOBILE */
+.menu-mobile {
+  display: none;
+}
+
+.menu-mobile .line1 {
+  width: 28.5px;
+  height: 3px;
+  background-color: white;
+}
+
+.menu-mobile .line2 {
+  width: 28.5px;
+  height: 3px;
+  background-color: white;
+  margin-top: 5px;
+}
+
+.menu-mobile .line3 {
+  width: 28.5px;
+  height: 3px;
+  background-color: white;
+  margin-top: 5px;
+}
+
+.dropdown-mobile {
+  display: none;
+}
+
+/* MAIN */
+.main {
+  margin-top: 145px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  align-items: center;
+}
+
+/* DESCRIPTION */
+.description h1 {
+  font-family: "Lora";
+  font-weight: 500;
+  font-size: 3em;
+}
+
+.description p {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1.5em;
+  line-height: 29.26px;
+  width: 370px;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.description a {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 1.125em;
+  color: white;
+}
+
+/* IMAGES */
+.images {
+  position: relative;
+  width: 730px;
+}
+
+.designer {
+  width: 410px;
+  height: 200px;
+  background-color: #181719;
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  top: 425px;
+  right: 0;
+  padding: 20px 30px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.designer img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+.designer figcaption {
+  position: relative;
+  top: 10px;
+  line-height: 20px;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 0.875em;
+}
+
+.designer span {
+  color: #828282;
+  font-size: 0.75em;
+}
+
+.designer-info {
+  font-family: "Lora";
+  font-weight: 700;
+  font-size: 1.5em;
+  position: absolute;
+  bottom: 33px;
+  width: 287px;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  margin-top: 230px;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 0.875em;
+  color: #a9a9a9;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1250px) {
+  /* GENETAL */
+  body {
+    max-width: 950px;
+  }
+
+  /* IMAGES */
+  .images {
+    width: 480px;
+  }
+
+  .designer {
+    top: 250px;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  /* GENERAL */
+  body {
+    max-width: 425px;
+  }
+
+  /* NAV */
+  .nav {
+    display: none;
+  }
+
+  /* NAV MOBILE */
+  .menu-mobile {
+    display: block;
+    cursor: pointer;
+  }
+
+  .dropdown-mobile {
+    display: none;
+    background-color: #181719;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    width: 425px;
+    height: 100vh;
+  }
+
+  .dropdown-mobile.active {
+    display: block;
+  }
+
+  .dropdown-mobile ul {
+    width: 102px;
+    height: 188px;
+    margin: 50% auto;
+  }
+
+  .dropdown-mobile a {
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 1.125rem;
+    color: white;
+    padding: 10px;
+  }
+
+  .dropdown-mobile a:hover {
+    font-weight: 700;
+    transition: 0.8s;
+  }
+
+  .nav-mobile ul li:not(:last-child) {
+    margin-bottom: 32px;
+  }
+
+  .close-dropdown {
+    font-size: 2rem;
+    font-family: sans-serif;
+    position: absolute;
+    right: 0;
+    top: 20px;
+    cursor: pointer;
+  }
+
+  /* MAIN */
+  .main {
+    margin-top: 50px;
+  }
+  /* IMAGES */
+  .designer {
+    width: 300px;
+    height: 138px;
+    top: 240px;
+    right: -20px;
+    padding: 15px 25px;
+    gap: 15px;
+  }
+
+  .designer img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .designer figcaption {
+    font-size: 0.75em;
+    top: 10px;
+    line-height: 15px;
+  }
+
+  .designer span {
+    font-size: 0.625em;
+  }
+
+  .designer-info {
+    font-size: 1.125em;
+    bottom: 15px;
+    width: 210px;
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 180px;
+  }
+}
